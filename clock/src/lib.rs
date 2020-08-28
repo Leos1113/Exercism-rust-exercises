@@ -2,10 +2,11 @@ use chrono::prelude::*;
 use chrono::{Duration, Utc};
 use std::fmt;
 
-#[derive(Debug, Eq, PartialEq)]
+#[derive(Debug, PartialEq)]
 pub struct Clock {
     hours: i32,
     minutes: i32,
+    _secret: ()
 }
 
 impl Clock {
@@ -18,6 +19,7 @@ impl Clock {
         Clock {
             hours: final_time.hour() as i32,
             minutes: final_time.minute() as i32,
+            _secret: ()
         }
     }
 
@@ -30,6 +32,7 @@ impl Clock {
         Clock {
             hours: added_minutes.hour() as i32,
             minutes: added_minutes.minute() as i32,
+            _secret: ()
         }
     }
 }
